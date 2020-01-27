@@ -33,7 +33,6 @@ exports.up = function(knex) {
       tbl
         .string("name", 255)
         .notNullable()
-        .unique()
         .index();
       tbl.text("description", 500).notNullable();
       tbl

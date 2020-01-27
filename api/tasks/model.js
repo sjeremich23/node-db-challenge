@@ -19,7 +19,7 @@ function find() {
       "p.name as project's name",
       "p.description as project's description"
     )
-    .join("projects as p");
+    .join("projects as p", "t.project_id", "p.id");
 }
 
 function findById(id) {
@@ -29,9 +29,12 @@ function findById(id) {
       "t.description",
       "t.notes",
       "t.completed",
-      "t.project_id as project's id:"
+      "t.project_id as project's id:",
+      "p.name as project's name",
+      "p.description as project's description"
     )
-    .where({ id })
+    .join("projects as p", "t.project_id", "p.id")
+    .where("t.id", id)
     .first();
 }
 
