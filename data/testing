@@ -1,0 +1,26 @@
+SELECT id,
+       name,
+       description,
+       completed
+  FROM projects;
+  
+/*
+    1 - Complete porfolio
+    2 - Find a Job
+    3 - Prepare for Wedding
+*/
+
+
+SELECT id,
+       name,
+       description,
+       project_id
+  FROM resources;
+
+
+SELECT id,
+       description,
+       notes,
+       completed,
+       project_id
+  FROM tasks;
